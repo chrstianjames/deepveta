@@ -1,0 +1,839 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DeepVeta - Your Intelligent AI Assistant</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
+     <meta property="og:title" content="free DeepVeta AI with Fastest">
+    <meta property="twitter:title" content="free DeepVeta AI with Fastest">
+    <meta property="og:locale" content="en">
+    <meta name="description" content="Completely free DeepVeta AI with fast, DeepVeta and no ads on your AI!">
+    <meta property="og:description" content="Completely free DeepVeta AI with fast, DeepVeta and no ads on your AI!">
+    <link rel="canonical" href="https://deepveta.x10.bz/">
+    <meta property="og:url" content="https://deepveta.x10.bz/">
+    <meta property="og:site_name" content="deepveta.x10.bz">
+    <meta property="og:image" content="https://deepveta.x10.bz/images/home-preview.png">
+    <meta property="twitter:image" content="https://deepveta.x10.bz/images/home-preview.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="text/javascript" src="/js/choice.min.82fc683e016c8a2f48dd2f9006191928bdfdf472c25b3b60f0ff6731bbafaa9d.js"></script>
+
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to override or extend Tailwind, and define theme variables */
+        :root {
+            --bg-primary: #121212; /* Deeper dark background */
+            --bg-secondary: #1A1A1A; /* Slightly lighter for cards/sections */
+            --text-primary: #E0E0E0; /* Light text */
+            --text-secondary: #A0A0A0; /* Muted text */
+            --accent-color: #19c37d; /* Green accent for buttons/highlights */
+            --accent-color-dark: #15a36c; /* Darker green for hover */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            --button-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            --mobile-menu-width: 280px; /* Define a fixed width for the mobile menu */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Ensure Inter is used */
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align to top for full page content */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Ensure full viewport height on mobile, handled by JS below */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overscroll-behavior-y: none;
+        }
+
+        /* Global container for sections */
+        .section-container {
+            width: 100%;
+            max-width: 1200px; /* Max width for content */
+            padding: 4rem 2rem; /* Vertical and horizontal padding */
+            margin: 0 auto; /* Center sections */
+        }
+
+        /* Hero Section Specifics */
+        .hero-section {
+            padding-top: 8rem; /* More space from top */
+            padding-bottom: 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh; /* Ensure it takes up most of the screen */
+        }
+
+        .cjgpt-logo {
+            font-size: 4.5rem; /* Larger logo */
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .hero-tagline {
+            font-size: 2.5rem; /* Larger tagline */
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+        }
+
+        .primary-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+            box-shadow: var(--button-shadow);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .primary-btn:hover {
+            background-color: var(--accent-color-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .primary-btn:active {
+            transform: translateY(0);
+            box-shadow: var(--button-shadow);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: var(--accent-color);
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            border: 2px solid var(--accent-color);
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .secondary-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--accent-color-dark);
+        }
+
+        .secondary-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Section Titles */
+        .section-heading {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subheading {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background-color: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%; /* Ensure cards in a row have same height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            color: var(--accent-color);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            /* Using inline SVG for icons to avoid external dependencies */
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Statistics Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background-color: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-secondary);
+            padding: 3rem 2rem;
+            width: 100%;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-branding {
+            grid-column: 1 / -1; /* Span full width on smaller screens */
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-branding .cjgpt-logo-small {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .footer-branding p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .section-heading {
+                font-size: 2.2rem;
+            }
+            .section-subheading {
+                font-size: 1.1rem;
+            }
+            .hero-tagline {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .primary-btn, .secondary-btn {
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+            }
+            .feature-card {
+                padding: 2rem;
+            }
+            .feature-card h3 {
+                font-size: 1.5rem;
+            }
+            .feature-card p {
+                font-size: 0.95rem;
+            }
+            .stat-number {
+                font-size: 3rem;
+            }
+            .stat-label {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-container {
+                padding: 3rem 1.5rem;
+            }
+            .hero-section {
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+                min-height: auto;
+            }
+            .cjgpt-logo {
+                font-size: 3.5rem;
+            }
+            .hero-tagline {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .button-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .primary-btn, .secondary-btn {
+                width: 100%;
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+            .section-heading {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            .section-subheading {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .feature-card {
+                padding: 1.5rem;
+            }
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr; /* Stack on mobile */
+                gap: 1.5rem;
+            }
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            .stat-label {
+                font-size: 0.95rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-column h4 {
+                margin-top: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+            .footer-column ul li {
+                margin-bottom: 0.5rem;
+            }
+            .footer-branding {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+            }
+            .footer-branding .cjgpt-logo-small {
+                font-size: 2rem;
+            }
+            .footer-branding p {
+                font-size: 0.85rem;
+            }
+            .footer-copyright {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Typing animation for hero tagline */
+        .typing-animation {
+            white-space: nowrap; /* Keep text on one line */
+            overflow: hidden; /* Hide overflow for typing effect */
+            border-right: 0.15em solid var(--accent-color); /* Typing cursor */
+            animation: typing 3.5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+            display: inline-block; /* Required for typing effect */
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color); }
+        }
+
+        /* NEW Mobile Menu Overlay Styles */
+        #mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+            z-index: 40;
+            opacity: 0; /* Start hidden */
+            visibility: hidden; /* Start hidden */
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #mobile-menu-overlay.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* NEW Mobile Menu Drawer */
+        #mobile-menu-drawer {
+            position: fixed;
+            top: 0;
+            right: 0; /* Slide in from the right */
+            width: var(--mobile-menu-width); /* Fixed width */
+            max-width: 90%; /* Ensure it doesn't overflow small screens */
+            height: 100%;
+            background-color: var(--bg-secondary);
+            z-index: 50; /* Above the overlay */
+            transform: translateX(100%); /* Start off-screen to the right */
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.4); /* Shadow on the left side */
+            border-left: 1px solid var(--border-color);
+        }
+
+        #mobile-menu-drawer.is-open {
+            transform: translateX(0); /* Slide into view */
+        }
+
+        #mobile-menu-drawer .close-btn {
+            align-self: flex-end; /* Push to top right */
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        #mobile-menu-drawer .close-btn:hover {
+            color: var(--accent-color);
+        }
+
+        #mobile-menu-drawer .menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        #mobile-menu-drawer .menu-links a {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        #mobile-menu-drawer .menu-links a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-bg-primary bg-opacity-90 backdrop-blur-md z-50 shadow-lg border-b border-border-color py-4">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-accent-color transition-colors duration-200 hover:text-accent-color-dark">DeepVeta</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-text-primary text-lg font-medium hover:text-accent-color transition-colors duration-200">Features</a>
+                <a href="#about" class="text-text-primary text-lg font-medium hover:text-accent-color transition-colors duration-200">About</a>
+                <a href="#privacy" class="text-text-primary text-lg font-medium hover:text-accent-color transition-colors duration-200">Privacy</a>
+                <a href="chat.php" class="text-text-primary text-lg font-medium hover:text-accent-color transition-colors duration-200">Try CJGPT</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-text-primary focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="md:hidden"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="md:hidden">
+        <button class="close-btn" id="mobile-menu-close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="menu-links">
+            <a href="#features" onclick="toggleMobileMenu()">Features</a>
+            <a href="#about" onclick="toggleMobileMenu()">About</a>
+            <a href="#privacy" onclick="toggleMobileMenu()">Privacy</a>
+            <a href="chat.php" onclick="toggleMobileMenu()">Try DeepVeta</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section section-container">
+        <h1 class="cjgpt-logo">DeepVeta</h1>
+        <h2 class="hero-tagline">
+            Meet   <span id="dynamic-tagline" class="typing-animation"></span>
+        </h2>
+        <p class="hero-subtitle">
+            Your intelligent AI assistant delivering lightning-fast responses and seamless conversations. Experience the future of AI interaction today.
+        </p>
+        <div class="button-group">
+            <a href="chat.php" class="primary-btn">
+                Try DeepVeta Now
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+            </a>
+            <a href="#features" class="secondary-btn">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-container bg-bg-secondary rounded-xl shadow-lg border border-border-color">
+        <h2 class="section-heading">Why Choose DeepVeta?</h2>
+        <p class="section-subheading">Discover the powerful features that make DeepVeta your perfect AI companion</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L13.5 21.75l1.5-6.75H9.75L12 3.75l-1.5 6.75H6.75l-1.5-6.75H3.75z" />
+                    </svg>
+                </div>
+                <h3>Ultra-Fast Response</h3>
+                <p>Get instant answers with our optimized AI engine. No waiting, just immediate, accurate responses to all your queries.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9.342 15.57a4.5 4.5 0 00-2.15-1.088h-.353c-.876 0-1.5.39-1.5 1.096v.309m-1.5 0l-.15.15a2.25 2.25 0 01-2.25 2.25H3.75a2.25 2.25 0 01-2.25-2.25v-.105m8.498-4.755l.485.33a4.5 4.5 0 002.15 1.088h.353c.876 0 1.5-.39 1.5-1.096v-.309m-1.5 0l.15.15a2.25 2.25 0 002.25 2.25h1.378a2.25 2.25 0 002.25-2.25v-.105M12 12a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zm-6.75 6.75h9v-2.25a.75.75 0 00-.75-.75h-7.5a.75.75 0 00-.75.75v2.25z" />
+                    </svg>
+                </div>
+                <h3>Advanced Intelligence</h3>
+                <p>Powered by cutting-edge AI technology, DeepVeta understands context and provides intelligent, relevant responses.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H16.5M21 12c0 4.556-4.03 8.25-9 8.25a9.75 9.75 0 01-9.75-9.75V9.75a3 3 0 013-3h.257a2.25 2.25 0 002.244-2.071l.15-.921A2.25 2.25 0 0110.5 2.25h2.25a2.25 2.25 0 012.244 2.071l.15.921a2.25 2.25 0 002.244 2.071H21v2.5Z" />
+                    </svg>
+                </div>
+                <h3>Natural Conversations</h3>
+                <p>Engage in fluid, natural conversations that feel human-like. DeepVeta adapts to your communication style.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h16.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v12.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                </div>
+                <h3>Privacy First</h3>
+                <p>Your conversations are secure and private. We prioritize your data protection with enterprise-grade security.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21.75H5.125c-.621 0-1.125-.504-1.125-1.125V15.375c0-.621.504-1.125 1.125-1.125h.375m9.75-10.5V7.875a3 3 0 01-.879 2.122L10.5 11.25m7.5-9l3 3m-3-3l-3 3m-3.75 3.75h7.5V16.5h-7.5V12z" />
+                    </svg>
+                </div>
+                <h3>Multi-Platform</h3>
+                <p>Access DeepVeta from any device, anywhere. Seamless experience across desktop, tablet, and mobile.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75a.75.75 0 01.75.75v15a.75.75 0 01-1.5 0V4.5a.75.75 0 01.75-.75z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 18.75a.75.75 0 01-.75.75H6a.75.75 0 01-.75-.75V6a.75.75 0 01.75-.75h12.75a.75.75 0 01.75.75v12.75z" />
+                    </svg>
+                </div>
+                <h3>Always Learning</h3>
+                <p>DeepVeta continuously improves and learns, ensuring you always get the most up-to-date and accurate information.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section-container text-center">
+        <h2 class="section-heading">Ready to Experience DeepVeta?</h2>
+        <p class="section-subheading">Join thousands of users who are already experiencing the future of AI assistance</p>
+        <a href="chat.php" class="primary-btn">
+            Start Chatting Now
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+            </a>
+        </section>
+
+    <!-- About CJGPT Section -->
+    <section id="about" class="section-container bg-bg-secondary rounded-xl shadow-lg border border-border-color">
+        <h2 class="section-heading">About DeepVeta</h2>
+        <p class="section-subheading text-left max-w-full">
+            DeepVeta represents the next generation of AI assistants, designed to provide fast, accurate, and helpful responses to all your questions. Built with advanced machine learning algorithms and trained on diverse datasets, DeepVeta offers a conversational experience that's both intelligent and intuitive.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-text-primary text-center mb-6">Our Mission</h3>
+        <p class="section-subheading text-left max-w-full mb-10">
+            To democratize access to intelligent AI assistance, making advanced conversational AI available to everyone, everywhere.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Conversations Handled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime Reliability</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2s</div>
+                <div class="stat-label">Average Response Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="chat.php">Try DeepVeta</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-branding">
+            <div class="cjgpt-logo-small">DeepVeta</div>
+            <p>Your intelligent AI assistant for instant, accurate responses and seamless conversations. Experience the future of AI interaction.</p>
+            <p class="footer-copyright">© 2025 DeepVeta. All rights reserved. | Developed by Christian James</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic Tagline Typing Effect
+        const dynamicTaglineElement = document.getElementById('dynamic-tagline');
+        const phrases = [
+            "DeepVeta",
+            "Your AI assistant.",
+            "Intelligent conversations.",
+            "Creative writing partner.",
+            "Problem-solving AI.",
+            "Always learning, always ready."
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100; // milliseconds per character
+        let deletingSpeed = 50; // milliseconds per character
+        let pauseTime = 1500; // pause before typing next phrase or deleting
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                dynamicTaglineElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                dynamicTaglineElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let currentSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                currentSpeed = pauseTime;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                currentSpeed = pauseTime;
+            }
+
+            setTimeout(typeWriter, currentSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+        const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenuDrawer.classList.contains('is-open');
+
+            if (isOpen) {
+                // Close the menu
+                mobileMenuDrawer.classList.remove('is-open');
+                mobileMenuOverlay.classList.remove('is-open');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                // Open the menu
+                mobileMenuDrawer.classList.add('is-open');
+                mobileMenuOverlay.classList.add('is-open');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        mobileMenuOverlay.addEventListener('click', toggleMobileMenu); // Close when overlay is clicked
+        mobileMenuCloseButton.addEventListener('click', toggleMobileMenu); // Close button inside drawer
+
+        // Function to set --app-height for consistent mobile viewport height
+        const setAppHeight = () => {
+            const doc = document.documentElement;
+            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+        };
+
+        // Call on load and resize/orientation change
+        window.addEventListener('resize', setAppHeight);
+        window.addEventListener('orientationchange', setAppHeight);
+        document.addEventListener('DOMContentLoaded', setAppHeight); // Ensure it's set on initial load
+    </script>
+</body>
+</html>
